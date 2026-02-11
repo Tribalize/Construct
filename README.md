@@ -74,4 +74,4 @@ If you have any issues or suggestions, please don't hesitate to open an issue on
 
 ### Adding Translations
 
-Construct currently only supports American English, but has translation capabilities. If you would like to contribute a translation, please join our Discord and reach out!
+Construct currently supports American English and Chinese (thanks to [wed150](https://github.com/wed150) & [EndrTrekker](https://github.com/EndrTrekker)). If you would like to contribute a translation, please join our Discord and reach out!

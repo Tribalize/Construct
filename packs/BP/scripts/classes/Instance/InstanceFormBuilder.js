@@ -17,8 +17,12 @@ export class InstanceFormBuilder {
         if (instance.hasLocation())
                 body.rawtext.push(...[
                     { text: '\n' },
-                    //{translate:world.getDimension(location.dimensionId).localizationKey},---to be compatible with language files, this method is not used
-                    { translate: 'construct.instance.menu.location', with: {rawtext: [{text:String(location.location.x)}, {text:String(location.location.y)}, {text:String(location.location.z)},{translate:world.getDimension(location.dimensionId).localizationKey}]} }
+                    { translate: 'construct.instance.menu.location', with: { rawtext: [
+                        { text:String(location.location.x) },
+                        { text:String(location.location.y) },
+                        { text:String(location.location.z) },
+                        { translate:world.getDimension(location.dimensionId).localizationKey }
+                    ]} }
                 ]);
         form.body(body);
         options.forEach(option => {
@@ -30,7 +34,7 @@ export class InstanceFormBuilder {
     static buildRenameInstance(currentName) {
         return new ModalFormData()
             .title(MenuFormBuilder.menuTitle)
-            .textField({ translate: 'construct.instance.menu.rename' }, currentName) //instance but not isntance
+            .textField({ translate: 'construct.instance.menu.rename' }, currentName)
             .submitButton({ translate: 'construct.menu.instance.button.rename' });
     }
 

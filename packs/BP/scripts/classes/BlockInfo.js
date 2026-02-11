@@ -41,18 +41,19 @@ class BlockInfo {
     static getBlockMessage(block) {
         if (!block)
             return { translate: 'construct.blockinfo.unknown' };
-        const message = { rawtext: [{ text: '§a' }, { translate: block.type.id }]};
+        const message = { rawtext: [{ text: '§a' }, { translate: block.localizationKey }] };
         const states = block.getAllStates();
         if (Object.keys(states).length > 0)
             message.rawtext.push({ text: `\n§7${this.getFormattedStates(states)}` });
-        if (block.isWaterlogged)
+        if (block.isWaterlogged) {
             message.rawtext.push({ rawtext: [
                 { text: '\n§7' },
                 { translate: 'construct.blockinfo.waterlogged' }
-            ]});
+            ] });
+        }
         return message;
     }
-
+    
     static getFormattedStates(states) {
         return Object.entries(states).map(([key, value]) => `§7${key}: §3${value}`).join('\n');
     }

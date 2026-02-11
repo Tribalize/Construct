@@ -1,4 +1,4 @@
-import { MolangVariableMap, system, TicksPerSecond, world } from "@minecraft/server";
+import { MolangVariableMap, system, TicksPerSecond } from "@minecraft/server";
 import { Vector } from "../lib/Vector";
 
 export class Outliner {

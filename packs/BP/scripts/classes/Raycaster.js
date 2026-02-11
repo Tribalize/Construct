@@ -1,5 +1,4 @@
 import { structureCollection } from "./Structure/StructureCollection";
-import { world } from "@minecraft/server";
 
 export class Raycaster {
     static STEP_SIZE = 0.2;

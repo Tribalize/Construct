@@ -55,13 +55,13 @@ export class MenuForm {
     async createNewInstance() {
         return MenuFormBuilder.buildNewInstance().show(this.player).then(async (response) => {
             if (response.canceled)
-                return;
+                return void 0;
             const instanceName = response.formValues[0];
             if (instanceName === '')
                 return void 0;
             const structureId = await this.getStructureId();
             if (!structureId)
-                return;
+                return void 0;
             try {
                 structureCollection.add(instanceName, structureId);
             } catch (e) {
@@ -82,7 +82,7 @@ export class MenuForm {
     async getStructureId() {
         return MenuFormBuilder.buildAllStructures().show(this.player).then((response) => {
             if (response.canceled)
-                return;
+                return void 0;
             const selectedStructureId = structureCollection.getWorldStructureIds()[response.selection];
             return selectedStructureId || this.getOtherStructureId();
         });
@@ -91,7 +91,7 @@ export class MenuForm {
     getOtherStructureId() {
         return MenuFormBuilder.buildOtherStructure().show(this.player).then((response) => {
             if (response.canceled)
-                return;
+                return void 0;
             const structureId = response.formValues[0];
             if (structureId === '')
                 return void 0;

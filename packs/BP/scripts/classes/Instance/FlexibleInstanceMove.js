@@ -52,6 +52,8 @@ export class FlexibleInstanceMove {
     }
 
     onFlexibleMovementTick() {
+        if (!this.player?.isValid)
+            this.finish();
         const playerMovement = new PlayerMovement(this.player);
         const instanceVelocity = this.calculateInstanceMovement(playerMovement);
         this.move(instanceVelocity);
@@ -105,8 +107,9 @@ export class FlexibleInstanceMove {
         this.instance.enable();
         this.instance.flexMovingPlayerId = void 0;
         this.allowPlayerMovement(true);
-        const builder = Builders.get(this.player.id);
-        builder.flexibleInstanceMovement = void 0;
+        const builder = Builders.get(this.player?.id);
+        if (builder)
+            builder.flexibleInstanceMovement = void 0;
         world.beforeEvents.itemUse.unsubscribe(this.onPlayerUseItemBound);
         world.beforeEvents.playerLeave.unsubscribe(this.onPlayerLeaveBound);
         this.sendFeedback({ translate: 'construct.instance.flexibleMove.finish', with: [

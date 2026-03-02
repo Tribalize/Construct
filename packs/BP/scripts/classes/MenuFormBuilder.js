@@ -33,7 +33,12 @@ export class MenuFormBuilder {
             allStructuresForm.button(`§2${structureName}`);
         });
         allStructuresForm.button({ translate: 'construct.mainmenu.selectstructure.other' });
-        allStructuresForm.button({ translate: 'construct.mainmenu.selectstructure.howto' });
+        //allStructuresForm.button({ translate: 'construct.mainmenu.selectstructure.howto' }); useless
+        //here is a same button at buildAllInstanceName() already
+        //It work as the button construct.mainmenu.selectstructure.other
+
+        //here is no locationkey named construct.mainmenu.selectstructure.howto but there's a key named construct.mainmenu.howto
+        
         return allStructuresForm;
     }
 

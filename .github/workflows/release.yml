@@ -25,6 +25,7 @@ jobs:
             OUTPUT="${PROJECT_NAME}-${VERSION}.mcaddon"
 
             mkdir build
+            mkdir -p "build/$(dirname "$BP_SOURCE")" "build/$(dirname "$RP_SOURCE")"
             cp -r "$BP_SOURCE" "build/${BP_SOURCE}"
             cp -r "$RP_SOURCE" "build/${RP_SOURCE}"
             cp LICENSE "build/${BP_SOURCE}"

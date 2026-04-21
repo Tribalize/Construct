@@ -2,22 +2,22 @@ export class BuilderOptions {
     static options = {};
 
     static add(builderOption) {
-        this.options[builderOption.identifier] = builderOption;
+        BuilderOptions.options[builderOption.identifier] = builderOption;
     }
 
     static get(optionId) {
-        return this.options[optionId];
+        return BuilderOptions.options[optionId];
     }
 
     static getOptionIds() {
-        return Object.keys(this.options).sort((a, b) => a.localeCompare(b));
+        return Object.keys(BuilderOptions.options).sort((a, b) => a.localeCompare(b));
     }
 
     static isEnabled(optionId, playerId) {
-        return this.options[optionId].isEnabled(playerId);
+        return BuilderOptions.options[optionId].isEnabled(playerId);
     }
 
     static setValue(optionId, playerId, value) {
-        return this.options[optionId].setValue(playerId, value);
+        return BuilderOptions.options[optionId].setValue(playerId, value);
     }
 }

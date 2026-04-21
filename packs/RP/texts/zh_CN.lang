@@ -83,12 +83,16 @@ construct.mainmenu.howto.add.or=§7§l或§r
 construct.mainmenu.howto.add.mcstructure=§7-将§f.mcstructure§7文件添加到此插件的§fstructures文件夹§7; 选择结构时, 选择§f其他§7选项, 然后使用文件名(不带'.mcstructure')作为§f结构ID§7; 使用后, 它会被添加到结构列表中;
 construct.mainmenu.howto.remove.header=§c如何移除结构:
 construct.mainmenu.howto.remove.body=§7-使用§f/structure delete§7命令从存档中移除结构
+construct.mainmenu.howto.giveStructureBlock=§a获取结构方块
 
 ## Commands
 construct.commands.construct=获得投影构筑菜单物品,可以使用它打开投影构筑菜单
 construct.commands.construct.denyorigin=此命令只能由玩家使用
 construct.commands.construct.fail=§c给予投影构筑菜单物品时发生错误
 construct.commands.construct.success=§a您已获得投影构筑菜单物品, 右键(长按)使用它以打开投影构筑菜单
+construct.commands.structureblock=给予你一个结构方块
+construct.commands.structureblock.fail=§c给予结构方块时发生错误
+construct.commands.structureblock.success=§a您已获得一个结构方块
 
 ## Options
 construct.option.enabled=现已启用!

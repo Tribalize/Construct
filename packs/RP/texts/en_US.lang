@@ -83,12 +83,16 @@ construct.mainmenu.howto.add.or=§7§lOR§r
 construct.mainmenu.howto.add.mcstructure=§7- Add a §f.mcstructure§7 file to this pack's §fstructures folder§7. When selecting your structure, select the §fOther§7 option and then use the filename (without '.mcstructure') as the §fStructure ID§7. After its first use, it will be added to the list of structures.
 construct.mainmenu.howto.remove.header=§cHow to Remove Structures:
 construct.mainmenu.howto.remove.body=§7- Use the §f/structure delete§7 command to remove a structure from the world.
+construct.mainmenu.howto.giveStructureBlock=§aGive Structure Block
 
 ## Commands
 construct.commands.construct=Gives you the Construct item. Use it to open the Construct menu.
 construct.commands.construct.denyorigin=This command can only be used by players.
 construct.commands.construct.fail=§cFailed to give you the Construct item.
 construct.commands.construct.success=§aYou recieved the Construct item! Use it to open the Construct menu.
+construct.commands.structureblock=Gives you a Structure Block.
+construct.commands.structureblock.fail=§cFailed to give you a Structure Block.
+construct.commands.structureblock.success=§aYou recieved a Structure Block.
 
 ## Options
 construct.option.enabled= is now enabled!

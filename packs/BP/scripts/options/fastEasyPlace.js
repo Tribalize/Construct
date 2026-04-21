@@ -58,6 +58,9 @@ world.afterEvents.itemStopUse.subscribe(onItemStopUse);
 function onItemStartUse(event) {
     if (event.itemStack?.typeId !== ACTION_ITEM)
         return;
+    const existingRunnerId = runnerByPlayer[event.source.id];
+    if (existingRunnerId)
+        system.clearRun(existingRunnerId);
     runnerByPlayer[event.source.id] = system.runInterval((() => onPlacingTick(event.source)));
 }
 
@@ -65,8 +68,10 @@ function onItemStopUse(event) {
     if (event.itemStack?.typeId !== ACTION_ITEM)
         return;
     const playerRunnerId = runnerByPlayer[event.source.id];
-    if (playerRunnerId)
+    if (playerRunnerId) {
         system.clearRun(playerRunnerId);
+        delete runnerByPlayer[event.source.id];
+    }
 }
 
 function onPlacingTick(player) {

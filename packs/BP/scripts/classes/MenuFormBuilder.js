@@ -54,6 +54,7 @@ export class MenuFormBuilder {
         ] };
         return new ActionFormData()
             .title(this.menuTitle)
-            .body(message);
+            .body(message)
+            .button({ translate: 'construct.mainmenu.howto.giveStructureBlock' });
     }
 }

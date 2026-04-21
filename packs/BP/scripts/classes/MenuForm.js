@@ -3,6 +3,7 @@ import { structureCollection } from './Structure/StructureCollection';
 import { MenuFormBuilder } from './MenuFormBuilder';
 import { InstanceForm } from './Instance/InstanceForm';
 import { BuilderForm } from './Builder/BuilderForm';
+import { giveItemToPlayer } from '../helpers/items';
 
 export class MenuForm {
     constructor(player, { jumpToInstance = false, instanceName = void 0 } = {}) {
@@ -35,7 +36,7 @@ export class MenuForm {
                     new BuilderForm(this.player);
                     return void 0;
                 } else if (selection == structureCollection.getInstanceNames().length + 2) {
-                    MenuFormBuilder.buildHowTo().show(this.player);
+                    this.showHowTo();
                     return void 0;
                 } else {
                     selection--;
@@ -96,6 +97,18 @@ export class MenuForm {
             if (structureId === '')
                 return void 0;
             return structureId;
+        });
+    }
+
+    showHowTo() {
+        forceShow(this.player, MenuFormBuilder.buildHowTo()).then((response) => {
+            if (response.canceled)
+                return;
+            if (response.selection === 0) {
+                if (!giveItemToPlayer(this.player, 'minecraft:structure_block'))
+                    this.player.sendMessage({ translate: 'construct.commands.structureblock.fail' });
+                else this.player.sendMessage({ translate: 'construct.commands.structureblock.success' });
+            }
         });
     }
 }

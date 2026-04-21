@@ -8,11 +8,9 @@ export class BuilderOptions {
     static get(optionId) {
         return this.options[optionId];
     }
-
-    static getOptionIds() {
-        return Object.keys(this.options).sort((a, b) => a.localeCompare(b));
-    }
-
+	static getOptionIds() {
+		return Object.keys(this.options).sort((a, b) => a.localeCompare(b));
+	}
     static isEnabled(optionId, playerId) {
         return this.options[optionId].isEnabled(playerId);
     }

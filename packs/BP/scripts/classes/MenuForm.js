@@ -99,8 +99,7 @@ export class MenuForm {
             return structureId;
         });
     }
-
-    showHowTo() {
+	showHowTo() {
         forceShow(this.player, MenuFormBuilder.buildHowTo()).then((response) => {
             if (response.canceled)
                 return;
